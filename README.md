@@ -1,2 +1,2 @@
 # PythonProjects
-This includes all of my Python Projects that I am proud of.
+This includes a list of fun Python Projects.
