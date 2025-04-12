@@ -1,5 +1,6 @@
 import os, requests, json
 import pyttsx3
+import creds
 
 def speak_text(text):
     engine = pyttsx3.init()
@@ -12,7 +13,7 @@ if __name__ == "__main__":
     city = input("Enter the name of your city\n> ")
     
     try:
-        url = f"https://api.weatherapi.com/v1/current.json?key=fedefabf28c145c286d112357251004&q={city}" # use your own api key, mine is different now
+        url = f"https://api.weatherapi.com/v1/current.json?key={creds.api_key}&q={city}"
         
         r = requests.get(url)
         wdic = json.loads(r.text)
@@ -54,7 +55,7 @@ if __name__ == "__main__":
         while another == "yes" or another == "y":
             city = input("\nEnter the name of your city\n> ")
             
-            url = f"https://api.weatherapi.com/v1/current.json?key=fedefabf28c145c286d112357251004&q={city}" # use your own api key, mine is different now
+            url = f"https://api.weatherapi.com/v1/current.json?key={creds.api_key}&q={city}"
             
             r = requests.get(url)
             wdic = json.loads(r.text)
